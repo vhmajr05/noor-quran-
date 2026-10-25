@@ -19,4 +19,6 @@ rw(mf,x=>{
   return x});
 // 3. Dépendances Media3
 rw(path.join(android,'app/build.gradle'),x=>x.includes('androidx.media3')?x:x.replace(/dependencies\s*\{/,m=>`${m}\n    implementation "androidx.media3:media3-exoplayer:1.5.1"\n    implementation "androidx.media3:media3-session:1.5.1"`));
+// 4. Numéro de version (Play Store exige qu'il augmente à chaque envoi)
+if(process.env.VERSION_CODE)rw(path.join(android,'app/build.gradle'),x=>x.replace(/versionCode\s+\d+/,`versionCode ${+process.env.VERSION_CODE}`).replace(/versionName\s+"[^"]*"/,`versionName "1.0.${+process.env.VERSION_CODE}"`));
 console.log('Couche audio native installée dans',android);

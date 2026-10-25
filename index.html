@@ -118,7 +118,7 @@ function markRead(n,v){const r=reads[n]||(reads[n]=[]);if(!r.includes(v))r.push(
 // --- audio
 const au=new Audio();let Q=null;
 // Récitateurs supplémentaires : fichiers verset par verset d'everyayah.com (noms de dossiers à valider en test ; si l'un échoue, l'app l'indique)
-const EA=[['Ali_Jaber_64kbps','Ali Jaber'],['Abdullah_Matroud_128kbps','Abdullah Matroud'],['Maher_AlMuaiqly_64kbps','Maher Al-Muaiqly'],['Yasser_Ad-Dussary_128kbps','Yasser Ad-Dussary'],['Nasser_Alqatami_128kbps','Nasser Al-Qatami'],['Saood_ash-Shuraym_128kbps','Saud Ash-Shuraim'],['Hani_Rifai_192kbps','Hani Ar-Rifai'],['Salah_Al_Budair_128kbps','Salah Al-Budair']],p3=n=>String(n).padStart(3,'0');
+const EA=window.NOOR_NO_EA?[]:[['Ali_Jaber_64kbps','Ali Jaber'],['Abdullah_Matroud_128kbps','Abdullah Matroud'],['Maher_AlMuaiqly_64kbps','Maher Al-Muaiqly'],['Yasser_Ad-Dussary_128kbps','Yasser Ad-Dussary'],['Nasser_Alqatami_128kbps','Nasser Al-Qatami'],['Saood_ash-Shuraym_128kbps','Saud Ash-Shuraim'],['Hani_Rifai_192kbps','Hani Ar-Rifai'],['Salah_Al_Budair_128kbps','Salah Al-Budair']],p3=n=>String(n).padStart(3,'0');
 const audioList=async n=>{if(cfg.rec.startsWith('ea:')){const f=cfg.rec.slice(3);return Array.from({length:META[n-1].numberOfAyahs},(_,i)=>({v:i+1,url:`https://everyayah.com/data/${f}/${p3(n)}${p3(i+1)}.mp3`}))}
  return(await getJ(`a:${n}:${cfg.rec}`,`${API}/surah/${n}/${cfg.rec}`)).ayahs.map(x=>({v:x.numberInSurah,url:String(x.audio).replace(/^http:/,'https:')}))};
 async function play(n,v,t0){try{const items=await audioList(n);Q={n,items,i:Math.max(0,items.findIndex(x=>x.v===v)),seek:t0||0};if(useNative()){Q.native=true;nativeStart()}else start()}catch{say('Audio indisponible pour ce récitateur (ou hors ligne).')}}
@@ -242,7 +242,7 @@ function settings(){const opt=(v,t)=>`<label class="opt"><input type="radio" nam
  <section class="card"><h3 class="sec">Texte arabe</h3><label for="sz" class="mute">Taille</label><input type="range" id="sz" min="1.2" max="3.2" step="0.1" value="${cfg.size}"><p class="ar bsm" id="pvw" lang="ar" dir="rtl"></p>
  <label for="fnt" class="mute">Police</label><select id="fnt" style="width:100%"><option value="quran" ${cfg.font==='quran'?'selected':''}>Coranique (Amiri Quran)</option><option value="naskh" ${cfg.font==='naskh'?'selected':''}>Naskh moderne (Noto Naskh Arabic)</option></select></section>
  <section class="card"><h3 class="sec">Traduction</h3><label class="opt"><input type="checkbox" id="shtr" ${cfg.showTr?'checked':''}><span>Afficher la traduction</span></label><label for="trs" class="mute">Édition française</label><select id="trs" style="width:100%"></select></section>
- <section class="card"><h3 class="sec">Sources</h3><p class="mute">Texte, traduction et audio : Al-Quran Cloud. Audio de certains récitateurs : <a href="https://everyayah.com/" rel="noopener">everyayah.com</a>. Polices : Amiri Quran et Noto Naskh Arabic (licence SIL OFL).</p></section>`;
+ <section class="card"><h3 class="sec">Sources et crédits</h3><p class="mute">Texte arabe : <a href="https://tanzil.net" rel="noopener">Tanzil.net</a>, via <a href="https://alquran.cloud" rel="noopener">Al-Quran Cloud</a> (texte non modifié). Traduction française et récitations : Al-Quran Cloud, pour un usage gratuit et non commercial.${EA.length?` Audio de certains récitateurs : <a href="https://everyayah.com/" rel="noopener">everyayah.com</a>.`:''} Polices : Amiri Quran et Noto Naskh Arabic (licence SIL OFL).</p><p class="mute">Application gratuite, sans publicité ni collecte de données. <a href="confidentialite.html">Politique de confidentialité</a></p></section>`;
  basmala().then(b=>{const e=$('#pvw');if(e)e.textContent=b}).catch(()=>{});
  getJ('ed:tr',`${API}/edition?language=fr&type=translation`).then(ed=>{const s=$('#trs');if(!s)return;
   if(!ed.some(e=>e.identifier===cfg.tr)){cfg.tr=(ed.find(e=>/hamidullah/.test(e.identifier))||ed[0]).identifier;saveCfg()}
@@ -268,8 +268,8 @@ addEventListener('hashchange',route);
 (async()=>{apply();
  try{META=await getJ('meta',API+'/surah')}catch{}
  let r=[];try{r=await getJ('ed:rec',`${API}/edition?format=audio&language=ar&type=versebyverse`)}catch{}
- if(!cfg.rec.startsWith('ea:')&&r.length&&!r.some(e=>e.identifier===cfg.rec))cfg.rec=r[0].identifier;
+ if(r.length&&!r.some(e=>e.identifier===cfg.rec)&&!EA.some(([f])=>'ea:'+f===cfg.rec))cfg.rec=r[0].identifier;
  const o=(v,n)=>`<option value="${esc(v)}" ${v===cfg.rec?'selected':''}>${esc(n)}</option>`;
- $('#rec').innerHTML=(r.length?`<optgroup label="Al-Quran Cloud">${r.map(e=>o(e.identifier,e.englishName||e.name)).join('')}</optgroup>`:'')+`<optgroup label="EveryAyah.com">${EA.map(([f,n])=>o('ea:'+f,n)).join('')}</optgroup>`;
+ $('#rec').innerHTML=(r.length?`<optgroup label="Al-Quran Cloud">${r.map(e=>o(e.identifier,e.englishName||e.name)).join('')}</optgroup>`:'')+(EA.length?`<optgroup label="EveryAyah.com">${EA.map(([f,n])=>o('ea:'+f,n)).join('')}</optgroup>`:'');
  route();navigator.storage?.persist?.().catch(()=>{});if('serviceWorker'in navigator&&!window.Capacitor)navigator.serviceWorker.register('sw.js').catch(()=>{});})();
 </script></body></html>
