@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Noor Quran</title><meta name="theme-color" content="#10100F"><meta name="color-scheme" content="dark">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#10100F;--bg2:#171715;--card:#1E1D1A;--raise:#26241F;--gold:#D5B875;--gold2:#E8D8A9;--ink:#F5F0E6;--mute:#BDB6A7;--line:#39352B;--field:#7C766A;--r:16px;--r2:12px;--s1:.5rem;--s2:1rem;--s3:1.5rem;--nav:64px;--rail:0px;--sz:1.9rem;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:0 env(safe-area-inset-right) calc(var(--nav) + 100px + env(safe-area-inset-bottom)) calc(env(safe-area-inset-left) + var(--rail))}
+a{color:var(--gold2)}h2{font-size:1.2rem;margin:0 0 .3rem}h3{margin:0}
+header{position:sticky;top:0;z-index:5;background:rgba(16,16,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:calc(.7rem + env(safe-area-inset-top)) 1rem .7rem}
+header h1{margin:0 auto;max-width:1000px;font-size:1.15rem;display:flex;align-items:center;gap:.5rem;color:var(--gold2)}
+main{max-width:760px;margin:0 auto;padding:var(--s2)}
+.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.f{fill:currentColor}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+#nav{position:fixed;left:0;right:0;bottom:0;z-index:7;display:flex;gap:4px;background:rgba(23,23,21,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+#nav a{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:52px;border-radius:var(--r2);color:var(--mute);text-decoration:none;font-size:.78rem;transition:color .15s,background .15s}
+#nav a[aria-current=page]{color:var(--gold);background:rgba(213,184,117,.1);font-weight:600}
+#nav a[aria-current=page]::before{content:"";position:absolute;top:0;width:28px;height:3px;border-radius:0 0 3px 3px;background:var(--gold)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:var(--s2);margin-bottom:var(--s2);animation:rise .28s var(--ease) both}
+a.card{display:block;color:inherit;text-decoration:none;transition:border-color .15s}a.card:hover,.it:hover{border-color:#5a5547}
+.hero{background:var(--raise);border-color:#4a4538}.mute{color:var(--mute);margin:.2rem 0}.row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.sec{margin:var(--s3) 0 var(--s1);color:var(--gold2);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.b,.ic,input,select{font:inherit;min-height:44px;border-radius:var(--r2);border:1px solid var(--line);background:var(--raise);color:var(--ink);padding:.4rem .9rem;transition:background .15s,border-color .15s,transform .1s}
+input,select{border-color:var(--field)}input::placeholder{color:var(--mute)}input[type=search]{flex:1;min-width:0}
+.b{display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;text-decoration:none}.b:hover,.ic:hover{border-color:var(--gold)}.b:active,.ic:active{transform:scale(.97)}
+.b.p{background:var(--gold);border-color:var(--gold);color:#10100F;font-weight:600}.b.p:hover{background:var(--gold2)}.b.ghost{background:transparent}
+.b[aria-pressed=true]{border-color:var(--gold);color:var(--gold2)}
+.ic{min-width:44px;display:inline-grid;place-items:center;padding:.2rem;cursor:pointer}.ic.on{color:var(--gold);border-color:var(--gold);background:rgba(213,184,117,.12)}.ic.on svg{fill:currentColor}
+#ls{display:grid;gap:.6rem;margin-top:var(--s2)}
+.it{display:grid;grid-template-columns:2.4rem 1fr auto;gap:.3rem .75rem;align-items:center;padding:.8rem .9rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);color:inherit;text-decoration:none;min-height:64px;transition:border-color .15s}
+.bdg{display:grid;place-items:center;width:2.4rem;height:2.4rem;border:1px solid var(--gold);border-radius:10px;color:var(--gold2);font-size:.9rem}
+.bar,.pbar{height:6px;background:var(--bg);border-radius:3px;overflow:hidden}.bar{grid-column:2/4}.pbar{margin:.5rem 0}
+.bar i,.pbar i{display:block;height:100%;background:var(--gold);border-radius:3px;transition:width .6s var(--ease)}
+.ar{font-family:'Amiri Quran','Traditional Arabic',serif;font-size:var(--sz);line-height:2.2;text-align:right;margin:.4rem 0;color:var(--ink)}
+.bsm{text-align:center;color:var(--gold2)}.fr{margin:.3rem 0 0;color:var(--mute)}
+.v{padding:var(--s2) .5rem;border-bottom:1px solid var(--line);border-left:3px solid transparent;scroll-margin-top:80px;transition:background .2s}.v.on{background:rgba(213,184,117,.08);border-left-color:var(--gold)}
+.vh{display:flex;justify-content:space-between;align-items:center}.acts{display:flex;gap:.3rem}
+.num{width:34px;height:34px;display:inline-grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold2);font-size:.85rem;font-weight:600}
+.warn{border:1px solid #E5736B;border-left:5px solid #E5736B;background:var(--card);border-radius:var(--r2);padding:.7rem 1rem;margin-bottom:var(--s2)}
+.load{display:flex;gap:.6rem;align-items:center;color:var(--mute);padding:var(--s3) 0}.load i{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
+#player{position:fixed;left:calc(var(--rail) + .5rem);right:.5rem;bottom:calc(var(--nav) + .5rem + env(safe-area-inset-bottom));z-index:6;background:var(--raise);border:1px solid var(--line);border-radius:var(--r);padding:.5rem .75rem;display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+#pp{background:var(--gold);border-color:var(--gold);color:#10100F}#pl{flex:1;min-width:8rem}.sb{font-size:.9rem;color:var(--mute)}
+#status{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav) + 170px + env(safe-area-inset-bottom));z-index:9;background:var(--raise);border:1px solid var(--gold);padding:.55rem 1rem;border-radius:999px;font-size:.9rem;max-width:90vw;animation:rise .2s both}#status:empty{display:none}
+dialog{background:var(--raise);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:var(--s2);max-width:min(92vw,420px)}dialog::backdrop{background:rgba(0,0,0,.65)}dialog p{margin:0 0 var(--s2)}dialog .row{justify-content:flex-end}
+body{background:radial-gradient(900px 420px at 50% -80px,rgba(213,184,117,.07),transparent 70%) no-repeat,var(--bg)}
+.ar{font-family:var(--arf,'Amiri Quran','Noto Naskh Arabic','Traditional Arabic',serif);line-height:2.35;word-spacing:.08em;text-rendering:optimizeLegibility;font-variant-ligatures:normal}
+#flt{width:100%}.mute a{display:inline-block;padding:.7rem 0}
+.b:disabled,.ic:disabled{opacity:.4;cursor:not-allowed;transform:none}
+#pp{width:52px;height:52px;border-radius:50%}#pl{display:inline-flex;align-items:center;gap:.4rem}
+input[type=radio],input[type=checkbox],input[type=range]{min-height:0;padding:0;border:0;background:none;accent-color:var(--gold)}
+input[type=radio],input[type=checkbox]{width:22px;height:22px;flex:none}input[type=range]{width:100%;height:32px}
+.opt{display:flex;gap:.8rem;align-items:center;min-height:48px;cursor:pointer}fieldset.card{min-width:0;margin-left:0;margin-right:0}legend{padding:0 .3rem}
+#pg{position:absolute;left:14px;right:14px;top:0;height:3px;background:var(--line);border-radius:0 0 3px 3px;overflow:hidden}#pg i{display:block;height:100%;width:0;background:var(--gold)}#player{padding-top:.8rem}#pl{flex:1 1 7rem;min-width:0;line-height:1.3}
+#mini{position:fixed;left:calc(var(--rail) + .5rem);right:.5rem;bottom:calc(var(--nav) + .5rem + env(safe-area-inset-bottom));z-index:6;height:56px;display:flex;align-items:center;gap:.25rem;background:var(--raise);border:1px solid var(--line);border-radius:var(--r);padding:0 .4rem 0 .25rem;box-shadow:0 6px 20px rgba(0,0,0,.45);animation:rise .2s var(--ease) both}
+#mpg{position:absolute;left:14px;right:14px;top:0;height:2px;background:var(--line);overflow:hidden}#mpg i{display:block;height:100%;width:0;background:var(--gold)}
+.mo{flex:1;min-width:0;min-height:48px;display:flex;align-items:center;gap:.5rem;background:none;border:0;color:var(--ink);font:inherit;text-align:left;cursor:pointer;border-radius:var(--r2);padding:0 .5rem}.mo:hover{background:rgba(213,184,117,.08)}
+#ml{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}#ml span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.l1{font-size:.74rem;color:var(--mute)}.l2{font-size:.92rem;font-weight:600}
+#mpp{background:var(--gold);border-color:var(--gold);color:#10100F;width:44px;border-radius:50%}
+.ph{flex:1 1 100%;display:flex;justify-content:space-between;align-items:center}.ph b{color:var(--gold2);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+#player .sb{flex:1 1 100%;margin-top:.15rem}#player #rec{flex:1 1 100%;min-width:0;max-width:100%;width:100%}
+#player{opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease),transform .2s var(--ease)}#player.in{opacity:1;transform:none}
+body.pmini #status{bottom:calc(var(--nav) + 90px + env(safe-area-inset-bottom))}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}}@keyframes spin{to{transform:rotate(360deg)}}
+@media(min-width:900px){:root{--rail:96px;--nav:0px}main{max-width:1000px}#nav{top:0;right:auto;width:var(--rail);flex-direction:column;justify-content:flex-start;padding:5rem 8px 0;border-top:0;border-right:1px solid var(--line)}#player,#mini{bottom:.5rem}#status{bottom:90px}body{padding-bottom:110px}#ls{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}#nav a[aria-current=page]::before{top:12px;bottom:12px;left:0;width:3px;height:auto;border-radius:0 3px 3px 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7.5 4.5 4 4.5v13c3.5 0 6 .5 8 2 2-1.5 4.5-2 8-2v-13c-3.5 0-6 .5-8 2zM12 6.5v13"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol><symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol><symbol id="i-prev" viewBox="0 0 24 24"><path d="M6 5v14"/><path d="M19 5.5v13L8.5 12z"/></symbol><symbol id="i-next" viewBox="0 0 24 24"><path d="M18 5v14"/><path d="M5 5.5v13L15.5 12z"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></symbol><symbol id="i-chevup" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol><symbol id="i-chevdown" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol></svg>
+<header><h1><svg class="i" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg> Noor Quran</h1></header>
+<main id="app" tabindex="-1"></main>
+<nav id="nav" aria-label="Navigation principale"><a href="#/" id="n-h"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-book"/></svg><span>Sourates</span></a><a href="#/search" id="n-s"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Recherche</span></a><a href="#/lists" id="n-l"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bookmark"/></svg><span>Mes listes</span></a><a href="#/settings" id="n-g"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-sliders"/></svg><span>Réglages</span></a></nav>
+<dialog id="dlg" aria-labelledby="dm"><form method="dialog"><p id="dm"></p><div class="row"><button class="b" value="cancel">Annuler</button><button class="b p" value="ok">Continuer</button></div></form></dialog>
+<div id="status" role="status" aria-live="polite"></div>
+<div id="mini" hidden role="region" aria-label="Lecteur audio réduit"><div id="mpg" aria-hidden="true"><i></i></div><button class="mo" id="mo" aria-label="Ouvrir le lecteur" aria-expanded="false"><span id="ml"></span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-chevup"/></svg></button><button class="ic" id="mpp" aria-label="Lecture / pause"><svg class="i f" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg></button><button class="ic" id="mnx" aria-label="Verset ou sourate suivant"><svg class="i f" aria-hidden="true" focusable="false"><use href="#i-next"/></svg></button></div>
+<div id="player" hidden role="region" aria-label="Lecteur audio"><div id="pg" aria-hidden="true"><i></i></div><div class="ph"><b>Lecteur</b><button class="ic" id="pc" aria-label="Réduire le lecteur"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-chevdown"/></svg></button></div>
+ <button class="ic" id="pv" aria-label="Verset précédent"><svg class="i f" aria-hidden="true" focusable="false"><use href="#i-prev"/></svg></button><button class="ic" id="pp" aria-label="Lecture / pause"><svg class="i f" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg></button><button class="ic" id="nx" aria-label="Verset suivant"><svg class="i f" aria-hidden="true" focusable="false"><use href="#i-next"/></svg></button>
+ <button class="ic" id="st" aria-label="Arrêter la lecture"><svg class="i f" aria-hidden="true" focusable="false"><use href="#i-stop"/></svg></button><span id="pl"></span><button class="b" id="rt" hidden>Réessayer</button><label class="sb" for="rec">Récitateur</label><select id="rec"></select>
+</div>
+<script>
+const API='https://api.alquran.cloud/v1',Q2='https://api.quran.com/api/v4';
+const $=(s,e=document)=>e.querySelector(s),app=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store={get(k,d){try{return JSON.parse(localStorage.getItem('nq:'+k))??d}catch{return d}},set(k,v){try{localStorage.setItem('nq:'+k,JSON.stringify(v))}catch{}}};
+let cfg={tr:'fr.hamidullah',rec:'ar.alafasy',size:1.9,showTr:true,mode:'auto',font:'quran',speed:1,...store.get('cfg',{})},META=[],reads=store.get('reads',{}),cur=0;
+const saveCfg=()=>store.set('cfg',cfg),say=m=>{const s=$('#status');s.textContent=m;clearTimeout(say.t);say.t=setTimeout(()=>{s.textContent=''},4500)};
+const ico=(n,f)=>`<svg class="i${f?' f':''}" aria-hidden="true" focusable="false"><use href="#i-${n}"/></svg>`,ppI=p=>{$('#pp').innerHTML=$('#mpp').innerHTML=ico(p?'pause':'play',1);if('mediaSession'in navigator)navigator.mediaSession.playbackState=p?'playing':'paused'};
+const ask=m=>new Promise(r=>{const d=$('#dlg');if(!d.showModal)return r(confirm(m));$('#dm').textContent=m;d.onclose=()=>r(d.returnValue==='ok');d.showModal()});
+const clean=()=>{if(!['stop','auto'].includes(cfg.mode))cfg.mode='auto';if(!['quran','naskh'].includes(cfg.font))cfg.font='quran';cfg.size=Math.min(3.2,Math.max(1.2,+cfg.size||1.9));cfg.speed=[0.75,1,1.25,1.5].includes(+cfg.speed)?+cfg.speed:1};clean();
+const apply=()=>{const s=document.documentElement.style;s.setProperty('--sz',cfg.size+'rem');s.setProperty('--arf',cfg.font==='naskh'?"'Noto Naskh Arabic','Amiri Quran',serif":"'Amiri Quran','Noto Naskh Arabic',serif")};
+// --- stockage local (IndexedDB) : textes et audio hors ligne
+const db=new Promise((ok,ko)=>{const r=indexedDB.open('noor',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>ok(r.result);r.onerror=()=>ko(r.error)});
+const idb=async(m,f)=>{const d=await db;return new Promise((ok,ko)=>{const t=d.transaction('kv',m),q=f(t.objectStore('kv'));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>ko(t.error)})};
+const kvGet=k=>idb('readonly',s=>s.get(k)),kvSet=(k,v)=>idb('readwrite',s=>s.put(v,k));
+const fj=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),10000);try{const r=await fetch(u,{signal:c.signal}),j=await r.json().catch(()=>({}));if(!r.ok||(j.code&&j.code!==200)||j.data===undefined){const e=new Error(j.status||r.status);e.code=j.code||r.status;throw e}return j.data}finally{clearTimeout(t)}};
+const getJ=async(key,url)=>{try{const d=await fj(url);await kvSet(key,d).catch(()=>{});return d}catch(e){const c=await kvGet(key);if(c)return c;throw e}};
+// --- texte arabe : normalisation, vérification d'intégrité (aucun verset n'est écrit dans ce code)
+const MARK=/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u0640\u08D3-\u08FF]/,
+ norm=s=>s.replace(new RegExp(MARK.source,'g'),'').replace(/[ٱأإآ]/g,'ا').replace(/ى/g,'ي').replace(/\s/g,'');
+const sha=async s=>{const w=globalThis.crypto?.subtle;if(!w){let h=5381;for(const c of s)h=((h<<5)+h+c.codePointAt(0))>>>0;return 'djb2:'+h}return [...new Uint8Array(await w.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('')};
+async function verify(n,vs){const m=[],exp=META[n-1]?.numberOfAyahs;
+ if(exp&&vs.length!==exp)m.push(`Nombre de versets : ${vs.length} au lieu de ${exp}.`);
+ vs.forEach((x,i)=>{if(x.v!==i+1)m.push(`Numérotation incohérente au verset ${i+1}.`);if(!x.a?.trim())m.push(`Verset ${x.v} vide.`)});
+ const h=await sha(vs.map(x=>x.a).join('\n')),k='fp'+n,old=store.get(k);
+ if(!old)store.set(k,h);else if(old!==h)m.push('L’empreinte SHA-256 diffère de celle enregistrée au premier chargement : texte modifié ou corrompu.');
+ return m}
+let _b;const basmala=async()=>{if(_b)return _b;let b=await kvGet('basmala').catch(()=>null);if(!b){b=(await loadSurah(1)).v[0].a;kvSet('basmala',b).catch(()=>{})}return _b=b};
+function stripB(t,b){const ch=[...t],k=norm(b).length;let c=0,i=0;
+ for(;i<ch.length&&c<k;i++)if(!MARK.test(ch[i])&&!/\s/.test(ch[i]))c++;
+ if(norm(ch.slice(0,i).join(''))!==norm(b))return t;
+ while(i<ch.length&&(MARK.test(ch[i])||/\s/.test(ch[i])))i++;return ch.slice(i).join('')}
+async function loadSurah(n){const key=`t:${n}:${cfg.tr}`;let d=await kvGet(key).catch(()=>null);
+ if(!d){const [a,t]=await fj(`${API}/surah/${n}/editions/quran-uthmani,${cfg.tr}`);
+  d={v:a.ayahs.map((x,i)=>({v:x.numberInSurah,g:x.number,a:x.text,t:t.ayahs[i]?.text||''}))};await kvSet(key,d).catch(()=>{})}
+ d.chk=await verify(n,d.v);return d}
+async function cross(n){say('Comparaison avec Quran.com…');
+ try{const d=await loadSurah(n),j=await(await fetch(`${Q2}/quran/verses/uthmani?chapter_number=${n}`)).json(),b=await basmala(),
+  o=j.verses.map(x=>norm(x.text_uthmani)),bad=[];
+  d.v.forEach((x,i)=>{const t=norm(i===0&&n!==1&&n!==9?stripB(x.a,b):x.a);if(t!==o[i])bad.push(x.v)});
+  const ok=!bad.length&&o.length===d.v.length;
+  app.insertAdjacentHTML('afterbegin',`<div class="${ok?'card':'warn'}" role="${ok?'status':'alert'}">${ok?'✓ Squelette consonantique identique à Quran.com ('+o.length+' versets).':'Écarts avec Quran.com aux versets : '+bad.join(', ')+'. Comparaison indicative (variantes typographiques possibles) ; consultez un mushaf de référence.'}</div>`)
+ }catch(e){say('Vérification impossible (hors ligne ?).')}}
+// --- listes : favoris, marque-pages
+const L=k=>store.get(k,[]),has=(k,s,v)=>L(k).some(x=>x.s===s&&x.v===v);
+function toggle(k,s,v){let l=L(k);const h=has(k,s,v);l=h?l.filter(x=>!(x.s===s&&x.v===v)):[...l,{s,v,t:Date.now()}];store.set(k,l);return !h}
+function markRead(n,v){const r=reads[n]||(reads[n]=[]);if(!r.includes(v))r.push(v);store.set('reads',reads);store.set('last',{s:n,v,t:Date.now()})}
+// --- audio
+const au=new Audio();let Q=null;
+// Récitateurs supplémentaires : fichiers verset par verset d'everyayah.com (noms de dossiers à valider en test ; si l'un échoue, l'app l'indique)
+const EA=window.NOOR_NO_EA?[]:[['Ali_Jaber_64kbps','Ali Jaber'],['Abdullah_Matroud_128kbps','Abdullah Matroud'],['Maher_AlMuaiqly_64kbps','Maher Al-Muaiqly'],['Yasser_Ad-Dussary_128kbps','Yasser Ad-Dussary'],['Nasser_Alqatami_128kbps','Nasser Al-Qatami'],['Saood_ash-Shuraym_128kbps','Saud Ash-Shuraim'],['Hani_Rifai_192kbps','Hani Ar-Rifai'],['Salah_Al_Budair_128kbps','Salah Al-Budair']],p3=n=>String(n).padStart(3,'0');
+// mp3quran.net : récitations par sourate entière. La liste (nom, serveur, sourates disponibles) est lue dans l'API officielle ; aucune URL n'est écrite ici.
+let MQL=[],RL=[],MQ_OK=false;
+const MQ_WANT=[['hadi','Mohamed Hadi Touré',/الهادي.*تور|هادي.*تور/],['luhaidan','Muhammad Al-Luhaidan',/محمد.*اللحيدان/],['minshawi','Mohamed Siddiq Al-Minshawi',/محمد صديق.*المنشاوي/],['kalbani','Adel Al-Kalbani',/عادل.*الكلباني/],['ghamdi','Saad Al-Ghamdi',/سعد.*الغامدي/],['abdulbasit','Abdul Basit Abdus-Samad',/عبد الباسط.*عبد الصمد/],['husary','Mahmoud Khalil Al-Husary',/محمود خليل.*الحصري/],['muaiqly','Maher Al-Muaiqly',/ماهر.*المعيقلي/],['dosari','Yasser Al-Dosari',/ياسر.*الدوسري/],['qatami','Nasser Al-Qatami',/ناصر.*القطامي/]];
+function mqPick(list){const out=[];for(const [k,name,re] of MQ_WANT){const rc=list.find(x=>re.test(x.name||''));if(!rc)continue;
+ const all=(rc.moshaf||[]).filter(m=>!/المعلم/.test(m.name||'')),ms=all.filter(m=>/حفص/.test(m.name||'')),m=ms.find(x=>/مرتل/.test(x.name))||ms[0]||all.find(x=>/مرتل/.test(x.name)&&!/ورش|قالون|الدوري|السوسي|شعبة|البزي|قنبل|خلف|خلاد/.test(x.name));
+ if(!m||!m.server)continue;const s=String(m.surah_list||'').split(',').map(Number).filter(x=>x>=1&&x<=114);if(!s.length)continue;
+ out.push({id:'mq:'+k,name,server:m.server.endsWith('/')?m.server:m.server+'/',surahs:s})}return out}
+async function loadMQ(){let d=await kvGet('mq:list').catch(()=>null);
+ if(!d||Date.now()-d.t>6048e5){try{const j=await(await fetch('https://www.mp3quran.net/api/v3/reciters?language=ar')).json(),l=mqPick(j.reciters||[]);if(l.length){d={t:Date.now(),l};kvSet('mq:list',d).catch(()=>{})}}catch{}}
+ MQ_OK=!!d;return d?d.l:[]}
+function fillRec(){const o=(v,n)=>`<option value="${esc(v)}" ${v===cfg.rec?'selected':''}>${esc(n)}</option>`;
+ $('#rec').innerHTML=(RL.length?`<optgroup label="Al-Quran Cloud">${RL.map(e=>o(e.identifier,e.englishName||e.name)).join('')}</optgroup>`:'')+(EA.length?`<optgroup label="EveryAyah.com">${EA.map(([f,n])=>o('ea:'+f,n)).join('')}</optgroup>`:'')+(MQL.length?`<optgroup label="mp3quran.net (sourate entière)">${MQL.map(x=>o(x.id,x.name+(x.surahs.length<114?` (${x.surahs.length}/114 sourates)`:''))).join('')}</optgroup>`:'')}
+function gotoSurah(d){const r=MQL.find(x=>x.id===cfg.rec);if(!r||!Q)return;let n=Q.n+d;while(n>=1&&n<=114&&!r.surahs.includes(n))n+=d;if(n<1||n>114){say('Pas d’autre sourate disponible pour ce récitateur.');return}play(n,1)}
+const audioList=async n=>{if(cfg.rec.startsWith('mq:')){const r=MQL.find(x=>x.id===cfg.rec);if(!r)throw new Error('mq');
+  if(!r.surahs.includes(n)){say(`Cette sourate n’est pas disponible pour ${r.name}.`);throw new Error('absent')}
+  return[{v:1,url:r.server+p3(n)+'.mp3',whole:true}]}
+ if(cfg.rec.startsWith('ea:')){const f=cfg.rec.slice(3);return Array.from({length:META[n-1].numberOfAyahs},(_,i)=>({v:i+1,url:`https://everyayah.com/data/${f}/${p3(n)}${p3(i+1)}.mp3`}))}
+ return(await getJ(`a:${n}:${cfg.rec}`,`${API}/surah/${n}/${cfg.rec}`)).ayahs.map(x=>({v:x.numberInSurah,url:String(x.audio).replace(/^http:/,'https:')}))};
+async function play(n,v,t0){try{const items=await audioList(n);Q={n,items,i:Math.max(0,items.findIndex(x=>x.v===v)),seek:t0||0,whole:!!items[0]?.whole};if(useNative()){Q.native=true;nativeStart()}else start()}catch(e){if(e.message!=='absent')say('Audio indisponible pour ce récitateur (ou hors ligne).')}}
+let gen=0,curBlob=null,sleepAt=0,sleepMin=0,lastSave=0;
+const pre=new Audio();pre.preload='auto'; // sert uniquement à précharger le verset suivant ; un seul lecteur joue (au)
+const setPl=t=>{$('#pl').innerHTML=t;const e=$('#ml');if(e)e.innerHTML=`<span class="l1">${esc(recName())}</span><span class="l2">${esc(t.replace(/<[^>]*>/g,'').trim())}</span>`},
+navBtns=()=>{let p=!Q||Q.i<=0,n=!Q||Q.i>=Q.items.length-1;
+ if(Q?.whole){const r=MQL.find(x=>x.id===cfg.rec);p=!r||!r.surahs.some(s=>s<Q.n);n=!r||!r.surahs.some(s=>s>Q.n)}
+ $('#pv').disabled=p;$('#nx').disabled=n;$('#mnx').disabled=n};
+// Lecteur : barre réduite (par défaut) ou panneau complet. L'état vit en dehors des pages : il survit aux changements de sourate.
+let pstate='mini';
+function pset(s){pstate=s;const m=$('#mini'),f=$('#player');
+ if(!Q){m.hidden=true;f.hidden=true;f.classList.remove('in');document.body.classList.remove('pmini');return}
+ $('#mo').setAttribute('aria-expanded',String(s==='open'));document.body.classList.toggle('pmini',s!=='open');
+ if(s==='open'){m.hidden=true;f.hidden=false;requestAnimationFrame(()=>f.classList.add('in'))}
+ else{f.classList.remove('in');m.hidden=false;setTimeout(()=>{if(pstate==='mini'&&Q)f.hidden=true},200)}}
+const applySpeed=()=>{au.defaultPlaybackRate=cfg.speed;au.playbackRate=cfg.speed};
+const goNext=()=>{if(Q?.whole){gotoSurah(1);return}if(Q?.native){NA.next().catch(onErr);return}if(Q&&Q.i<Q.items.length-1){Q.i++;start()}},goPrev=()=>{if(Q?.whole){gotoSurah(-1);return}if(Q?.native){NA.previous().catch(onErr);return}if(Q&&Q.i>0){Q.i--;start()}};
+function savePos(t){if(!Q)return;store.set('np',{n:Q.n,v:Q.items[Q.i].v,rec:cfg.rec,t:Q.done?0:+((t??au.currentTime)||0).toFixed(1)})}
+function mediaMeta(){if(!('mediaSession'in navigator)||!Q)return;const it=Q.items[Q.i],m=META[Q.n-1],o=$('#rec').selectedOptions?.[0];
+ navigator.mediaSession.metadata=new MediaMetadata({title:`${m?.englishName||'Sourate '+Q.n} · ${Q.whole?'récitation complète':'verset '+it.v}`,artist:o?o.textContent:'',album:'Noor Quran',artwork:[{src:document.querySelector('link[rel=apple-touch-icon]')?.href||'icon-512.png',sizes:'192x192',type:'image/png'}]})}
+function mediaHandlers(){if(!('mediaSession'in navigator))return;const h=(k,f)=>{try{navigator.mediaSession.setActionHandler(k,f)}catch{}};
+ h('play',onPlay);h('pause',()=>{au.pause();ppI(0)});h('previoustrack',goPrev);h('nexttrack',goNext);h('stop',stopAll)}
+async function prefetch(){const n=Q&&Q.items[Q.i+1];if(!n)return;const b=await kvGet('b:'+n.url).catch(()=>null);if(!b)pre.src=n.url}
+async function start(){const my=++gen,it=Q.items[Q.i];Q.done=false;Q.failed=false;$('#rt').hidden=true;au.pause();
+ const b=await kvGet('b:'+it.url).catch(()=>null);if(my!==gen)return;
+ if(curBlob){URL.revokeObjectURL(curBlob);curBlob=null}
+ au.src=b?(curBlob=URL.createObjectURL(b)):it.url;applySpeed();
+ if(Q.seek){const s=Q.seek;Q.seek=0;au.addEventListener('loadedmetadata',()=>{if(my===gen&&isFinite(au.duration))au.currentTime=Math.max(0,Math.min(s,au.duration-.5))},{once:true})}
+ pset(pstate);setPl(`Sourate ${Q.n} · ${Q.whole?'récitation complète':'verset '+it.v}`);navBtns();mediaMeta();savePos();
+ document.querySelectorAll('.v.on').forEach(e=>e.classList.remove('on'));
+ const el=cur===Q.n&&!Q.whole&&$('#v'+it.v);if(el){el.classList.add('on');el.scrollIntoView({block:'center'})}
+ try{await au.play();if(my===gen){ppI(1);prefetch()}}catch{if(my===gen)ppI(0)}}
+// Fin réelle d'un verset (« ended ») : mode « auto » (défaut) = verset suivant sans pause ; mode « stop » (facultatif) = arrêt, verset courant conservé
+function onEnd(){if(!Q)return;
+ if(cfg.mode==='auto'&&Q.i<Q.items.length-1){Q.i++;start();return}
+ Q.done=true;ppI(0);const v=Q.items[Q.i].v,last=Q.i>=Q.items.length-1;
+ setPl(`${ico('check')} ${last?'Fin de la sourate':'Verset '+v+' terminé'}`);say(last?'Fin de la sourate':`Verset ${v} terminé — appuyez sur Lecture pour continuer`);navBtns();savePos()}
+function onPlay(){if(!Q)return;if(Q.native){nPlay();return}
+ if(Q.done){Q.i=Q.i<Q.items.length-1?Q.i+1:0;start();return}
+ if(au.paused)au.play().then(()=>ppI(1)).catch(()=>ppI(0));else{au.pause();ppI(0)}}
+function onTime(){if(!Q)return;
+ if(sleepAt&&Date.now()>=sleepAt){sleepAt=0;sleepMin=0;au.pause();ppI(0);say('Minuteur terminé : lecture arrêtée');return}
+ const d=au.duration;if(d>0&&isFinite(d))$('#pg i').style.width=$('#mpg i').style.width=(100*(Q.i+au.currentTime/d)/Q.items.length)+'%';
+ const t=Date.now();if(t-lastSave>4000){lastSave=t;savePos()}}
+function onErr(){if(!Q)return;Q.failed=true;ppI(0);$('#rt').hidden=false;setPl('Lecture impossible');say('Lecture audio impossible. Appuyez sur Réessayer.')}
+function stopAll(){if(Q?.native)NA.stop().catch(()=>{});gen++;au.pause();au.removeAttribute('src');au.load();Q=null;sleepAt=0;sleepMin=0;pstate='mini';pset('mini');document.querySelectorAll('.v.on').forEach(e=>e.classList.remove('on'));ppI(0);if('mediaSession'in navigator){navigator.mediaSession.metadata=null;navigator.mediaSession.playbackState='none'}}
+function resume(){const np=store.get('np');if(!np||!META[np.n-1])return;
+ if([...($('#rec').options||[])].some(x=>x.value===np.rec)){cfg.rec=np.rec;saveCfg();$('#rec').value=np.rec}
+ play(np.n,np.v,np.t);location.hash=`#/s/${np.n}/${np.v}`}
+// --- Lecteur natif Android (APK Capacitor) : Media3 enchaîne lui-même les versets, même écran verrouillé.
+// Dans le navigateur / la PWA, NA vaut null et le lecteur web ci-dessus est utilisé comme avant.
+const CP=window.Capacitor,NA=CP?.isNativePlatform?.()?(CP.Plugins?.NoorAudio||CP.registerPlugin?.('NoorAudio')):null;
+const useNative=()=>!!NA&&navigator.onLine!==false; // hors ligne : lecteur web (fichiers téléchargés dans la WebView)
+const recName=()=>{const q=MQL.find(x=>x.id===cfg.rec);if(q)return q.name;const o=$('#rec').selectedOptions?.[0];return o?o.textContent:''};
+let notifAsked=false;
+function nUi(){const it=Q.items[Q.i];pset(pstate);setPl(`Sourate ${Q.n} · ${Q.whole?'récitation complète':'verset '+it.v}`);navBtns();
+ document.querySelectorAll('.v.on').forEach(e=>e.classList.remove('on'));
+ const el=cur===Q.n&&!Q.whole&&$('#v'+it.v);if(el){el.classList.add('on');el.scrollIntoView({block:'center'})}savePos()}
+const doneUi=()=>{Q.done=true;ppI(0);const v=Q.items[Q.i].v,last=Q.i>=Q.items.length-1;setPl(`${ico('check')} ${last?'Fin de la sourate':'Verset '+v+' terminé'}`);say(last?'Fin de la sourate':`Verset ${v} terminé — appuyez sur Lecture pour continuer`);navBtns();savePos()};
+async function nativeStart(){gen++;au.pause();const m=META[Q.n-1],art=recName();
+ if(!notifAsked){notifAsked=true;try{await NA.requestNotifications()}catch{}}
+ Q.done=false;Q.failed=false;$('#rt').hidden=true;
+ const items=Q.items.map(x=>({id:String(x.v),url:x.url,title:`${m?.englishName||'Sourate '+Q.n} · ${Q.whole?'récitation complète':'verset '+x.v}`,artist:art,album:'Noor Quran'}));
+ try{await NA.setQueue({items,index:Q.i,positionMs:Math.round((Q.seek||0)*1000),speed:cfg.speed,pauseAtEnd:cfg.mode==='stop',autoplay:true});Q.seek=0;
+  if(sleepMin)NA.setSleep({minutes:sleepMin}).catch(()=>{});nUi();ppI(1)}
+ catch(e){Q.native=false;start()}} // repli : lecteur web
+async function nPlay(){try{const last=Q.i>=Q.items.length-1;
+ if(Q.done){if(last){await NA.seek({index:0,positionMs:0});Q.i=0;nUi()}Q.done=false;await NA.play();ppI(1);return}
+ const s=await NA.getState();if(s.playWhenReady){await NA.pause();ppI(0)}else{await NA.play();ppI(1)}}catch{onErr()}}
+async function syncNative(){if(!Q?.native)return;try{const s=await NA.getState();if(!s.count)return;
+ if(s.index!==Q.i){Q.i=s.index;nUi()}if(!Q.done)ppI(!!s.playWhenReady);
+ if(s.durationMs>0)$('#pg i').style.width=$('#mpg i').style.width=(100*(Q.i+s.positionMs/s.durationMs)/Q.items.length)+'%';
+ if(Date.now()-lastSave>4000){lastSave=Date.now();savePos(s.positionMs/1000)}}catch{}}
+if(NA){NA.addListener('item',e=>{if(Q?.native&&e.index!==Q.i){Q.i=e.index;Q.done=false;nUi();ppI(1)}});
+ NA.addListener('state',e=>{if(!Q?.native)return;if(e.playing)Q.done=false;if(!Q.done)ppI(!!e.playWhenReady)});
+ NA.addListener('verseEnded',()=>{if(Q?.native)doneUi()});NA.addListener('ended',()=>{if(Q?.native)doneUi()});
+ NA.addListener('error',()=>{if(Q?.native)onErr()});
+ NA.addListener('sleep',()=>{sleepMin=0;sleepAt=0;say('Minuteur terminé : lecture arrêtée')});
+ const iv=setInterval(()=>{if(Q?.native&&!document.hidden)syncNative()},1000);iv?.unref?.();
+ document.addEventListener?.('visibilitychange',()=>{if(!document.hidden)syncNative()})}
+au.onended=onEnd;au.onplay=()=>ppI(1);au.onpause=()=>{if(!au.ended)ppI(0)};au.onerror=onErr;au.ontimeupdate=onTime;
+addEventListener('pagehide',savePos);mediaHandlers();
+$('#pp').onclick=$('#mpp').onclick=onPlay;$('#mo').onclick=()=>pset('open');$('#pc').onclick=()=>pset('mini');addEventListener('keydown',e=>{if(e.key==='Escape'&&pstate==='open')pset('mini')});$('#nx').onclick=$('#mnx').onclick=goNext;$('#pv').onclick=goPrev;$('#st').onclick=stopAll;$('#rt').onclick=()=>{if(Q)Q.native?nativeStart():start()};
+$('#rec').onchange=e=>{cfg.rec=e.target.value;saveCfg();if(Q)play(Q.n,Q.items[Q.i].v)};
+async function dlAudio(n){if(!await ask('Télécharger l’audio de cette sourate ? Vérifiez que la licence de la source et du récitateur autorise la copie hors ligne.'))return;
+ try{const items=await audioList(n);let k=0;for(const it of items){if(!await kvGet('b:'+it.url))await kvSet('b:'+it.url,await(await fetch(it.url)).blob());say(`Audio ${++k}/${items.length}`)}say('Audio disponible hors ligne.')}catch{say('Téléchargement interrompu ou refusé par la source audio.')}}
+async function dlAllText(){for(let n=1;n<=114;n++){try{await loadSurah(n)}catch{say('Interrompu à la sourate '+n);return}say(`Texte hors ligne : ${n}/114`)}say('Texte complet disponible hors ligne.')}
+// --- vues
+let nav=0;const err=m=>`<div class="warn" role="alert">${m}</div>`;
+function home(){const total=META.reduce((a,m)=>a+m.numberOfAyahs,0),done=Object.values(reads).reduce((a,x)=>a+x.length,0),last=store.get('last'),bm=L('bm').slice(-1)[0],np=store.get('np');
+ app.innerHTML=`<section class="card hero"><h2>Suivi de lecture</h2><p class="mute">${done} versets lus${total?` sur ${total} (${(100*done/total).toFixed(1)} %)`:''}</p><div class="pbar" role="progressbar" aria-label="Progression de lecture" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${total?Math.round(100*done/total):0}"><i style="width:${total?100*done/total:0}%"></i></div><div class="row" style="margin-top:var(--s2)">
+ ${np&&META[np.n-1]?`<button class="b p" data-a="resume">${ico('play',1)} Reprendre l’écoute : ${esc(META[np.n-1].englishName)}, verset ${np.v}</button>`:''}${last?`<a class="b" href="#/s/${last.s}/${last.v}">Reprendre la lecture : sourate ${last.s}, verset ${last.v}</a>`:''}${bm?`<a class="b" href="#/s/${bm.s}/${bm.v}">Marque-page ${bm.s}:${bm.v}</a>`:''}
+ <button class="b" data-a="all">${ico('download')} Tout le texte hors ligne</button></div></section>
+  ${META.length?`<h2 class="sec">Sourates</h2><input type="search" id="flt" placeholder="Filtrer les sourates (nom ou numéro)" aria-label="Filtrer les sourates"><div id="ls">${META.map(m=>`<a class="it" href="#/s/${m.number}" data-k="${esc((m.number+' '+m.englishName+' '+m.englishNameTranslation).toLowerCase())}"><b class="bdg">${m.number}</b><span>${esc(m.englishName)}<br><small class="mute">${esc(m.englishNameTranslation)} · ${m.numberOfAyahs} v.</small></span><span lang="ar" dir="rtl" class="ar" style="font-size:1.4rem;margin:0">${esc(m.name)}</span><span class="bar"><i style="width:${Math.min(100,100*(reads[m.number]||[]).length/m.numberOfAyahs)}%"></i></span></a>`).join('')}</div>`:err('Liste indisponible : une connexion est nécessaire au premier lancement.')}`;
+ $('#flt')?.addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim();document.querySelectorAll('#ls .it').forEach(a=>a.hidden=!a.dataset.k.includes(q))});}
+async function reader(n,v){cur=n;const m=META[n-1];if(!m){home();return}app.innerHTML='<div class="load" role="status"><i></i> Chargement…</div>';const tk=nav;let d;
+ try{d=await loadSurah(n)}catch{if(tk===nav)app.innerHTML=err('Sourate indisponible hors ligne. Connectez-vous une première fois pour la mettre en cache.');return}
+ const bs=await basmala().catch(()=>''),showB=n!==1&&n!==9&&bs,vs=d.v.map((x,i)=>i===0&&showB?{...x,a:stripB(x.a,bs)}:x);
+ if(tk!==nav)return;
+ app.innerHTML=`<a class="b ghost" href="#/">${ico('back')} Sourates</a>
+ <section class="card"><h2 style="margin:0"><span lang="ar" dir="rtl">${esc(m.name)}</span> — ${esc(m.englishName)}</h2><p class="mute">${m.numberOfAyahs} versets · ${esc(m.revelationType)}</p>
+ <div class="row"><button class="b p" data-a="playS">${ico('play',1)} Écouter</button><button class="b" data-a="dl">${ico('download')} Audio hors ligne</button><button class="b" data-a="chk">${ico('check')} Vérifier le texte</button>
+ <button class="ic" data-a="sz-" aria-label="Réduire la taille du texte">A−</button><button class="ic" data-a="sz+" aria-label="Agrandir la taille du texte">A+</button>
+ <button class="b" data-a="tr" aria-pressed="${cfg.showTr}">Traduction : ${cfg.showTr?'oui':'non'}</button></div></section>
+ ${d.chk.length?err('Contrôle d’intégrité : '+d.chk.map(esc).join(' '))+'':''}
+ ${showB?`<p class="ar bsm" lang="ar" dir="rtl">${esc(bs)}</p>`:''}
+ ${vs.map(x=>`<article class="v" id="v${x.v}" data-v="${x.v}"><div class="vh"><span class="num">${x.v}</span><span class="acts">
+ <button class="ic" data-a="play" data-v="${x.v}" aria-label="Écouter le verset ${x.v}">${ico('play',1)}</button>
+ <button class="ic ${has('fav',n,x.v)?'on':''}" data-a="fav" data-v="${x.v}" aria-pressed="${has('fav',n,x.v)}" aria-label="Favori : verset ${x.v}">${ico('star')}</button>
+ <button class="ic ${has('bm',n,x.v)?'on':''}" data-a="bm" data-v="${x.v}" aria-pressed="${has('bm',n,x.v)}" aria-label="Marque-page : verset ${x.v}">${ico('bookmark')}</button></span></div>
+ <p class="ar" lang="ar" dir="rtl">${esc(x.a)}</p>${cfg.showTr?`<p class="fr" lang="fr">${esc(x.t)}</p>`:''}</article>`).join('')}`;
+ const io=new IntersectionObserver(es=>es.forEach(e=>{const el=e.target;if(e.isIntersecting)el._t=setTimeout(()=>markRead(n,+el.dataset.v),1500);else clearTimeout(el._t)}),{threshold:.6});
+ document.querySelectorAll('.v').forEach(el=>io.observe(el));
+ if(Q&&!Q.whole&&Q.n===n&&Q.items[Q.i])$('#v'+Q.items[Q.i].v)?.classList.add('on');
+ if(v>1)$('#v'+v)?.scrollIntoView({block:'start'});}
+function search(){app.innerHTML=`<form id="sf" class="card" role="search"><h2>Recherche</h2><label for="q" class="mute">Dans la traduction française ou en arabe</label><div class="row"><input id="q" type="search" autocomplete="off"><button class="b p">Chercher</button></div></form><div id="res" aria-live="polite"></div>`;
+ $('#sf').onsubmit=async e=>{e.preventDefault();const q=$('#q').value.trim();if(!q)return;const ar=/[\u0600-\u06FF]/.test(q),res=$('#res');res.textContent='Recherche…';let hits,off='';
+  try{const j=await fj(`${API}/search/${encodeURIComponent(q)}/all/${ar?'quran-simple':cfg.tr}`);hits=j.matches.map(x=>({s:x.surah.number,v:x.numberInSurah,t:x.text}))}
+  catch(e){if(e.code===404)hits=[];else{off='<p class="mute">Recherche locale (textes déjà téléchargés).</p>';hits=[];
+   for(const m of META){const d=await kvGet(`t:${m.number}:${cfg.tr}`).catch(()=>null);if(d)d.v.forEach(x=>{if(ar?norm(x.a).includes(norm(q)):x.t.toLowerCase().includes(q.toLowerCase()))hits.push({s:m.number,v:x.v,t:ar?x.a:x.t})})}}}
+  res.innerHTML=off+(hits.length?`<p class="mute">${hits.length} résultat(s)${hits.length>50?' (50 premiers)':''}</p>`+hits.slice(0,50).map(h=>`<a class="card" href="#/s/${h.s}/${h.v}"><b>${esc(META[h.s-1]?.englishName)} ${h.s}:${h.v}</b><p ${ar?'class="ar" lang="ar" dir="rtl"':'lang="fr"'}>${esc(h.t)}</p></a>`).join(''):'<div class="card mute">Aucun résultat.</div>')}}
+async function lists(){const tk=nav;app.innerHTML='<h2>Mes listes</h2>';
+ for(const [k,t] of [['fav','Favoris'],['bm','Marque-pages']]){if(tk!==nav)return;const l=L(k);app.insertAdjacentHTML('beforeend',`<h3 class="sec">${t}</h3>${l.length?'':'<div class="card mute">Aucun élément pour le moment.</div>'}<div id="l-${k}"></div>`);
+  for(const x of l){let ar='',fr='';try{const d=await loadSurah(x.s),y=d.v[x.v-1];ar=y.a;fr=y.t}catch{}
+   if(tk!==nav)return;$('#l-'+k).insertAdjacentHTML('beforeend',`<div class="card"><div class="vh"><a href="#/s/${x.s}/${x.v}"><b>${esc(META[x.s-1]?.englishName)} ${x.s}:${x.v}</b></a><button class="ic" data-a="rm" data-k="${k}" data-s="${x.s}" data-v="${x.v}" aria-label="Retirer">${ico('close')}</button></div><p class="ar" lang="ar" dir="rtl">${esc(ar)}</p><p class="fr" lang="fr">${esc(fr)}</p></div>`)}}}
+function settings(){const opt=(v,t)=>`<label class="opt"><input type="radio" name="rm" value="${v}" ${cfg.mode===v?'checked':''}><span>${t}</span></label>`;
+ app.innerHTML=`<h2>Réglages</h2>
+ <fieldset class="card"><legend class="sec">Comportement de la récitation</legend>${opt('auto','Continuer automatiquement (recommandé)')}${opt('stop','Arrêter après chaque verset')}<p class="mute">Par défaut, les versets s’enchaînent sans pause jusqu’à la fin de la sourate ou jusqu’à ce que vous appuyiez sur Pause ou Arrêter. L’option d’arrêt est facultative.${MQL.length?' Les récitations « sourate entière » (mp3quran.net) ne sont pas découpées par verset : elle ne s’y applique pas.':''}</p></fieldset>
+ <section class="card"><h3 class="sec">Lecture</h3><label for="spd" class="mute">Vitesse</label><select id="spd" style="width:100%;margin-bottom:.8rem">${[0.75,1,1.25,1.5].map(s=>`<option value="${s}" ${+cfg.speed===s?'selected':''}>${s===1?'Normale (1×)':s+'×'}</option>`).join('')}</select><label for="slp" class="mute">Minuteur de sommeil (désactivé par défaut)</label><select id="slp" style="width:100%">${[0,15,30,60].map(m=>`<option value="${m}" ${sleepMin===m?'selected':''}>${m?m+' minutes':'Désactivé'}</option>`).join('')}</select></section>
+ <section class="card"><h3 class="sec">Texte arabe</h3><label for="sz" class="mute">Taille</label><input type="range" id="sz" min="1.2" max="3.2" step="0.1" value="${cfg.size}"><p class="ar bsm" id="pvw" lang="ar" dir="rtl"></p>
+ <label for="fnt" class="mute">Police</label><select id="fnt" style="width:100%"><option value="quran" ${cfg.font==='quran'?'selected':''}>Coranique (Amiri Quran)</option><option value="naskh" ${cfg.font==='naskh'?'selected':''}>Naskh moderne (Noto Naskh Arabic)</option></select></section>
+ <section class="card"><h3 class="sec">Traduction</h3><label class="opt"><input type="checkbox" id="shtr" ${cfg.showTr?'checked':''}><span>Afficher la traduction</span></label><label for="trs" class="mute">Édition française</label><select id="trs" style="width:100%"></select></section>
+ <section class="card"><h3 class="sec">Sources et crédits</h3><p class="mute">Texte arabe : <a href="https://tanzil.net" rel="noopener">Tanzil.net</a>, via <a href="https://alquran.cloud" rel="noopener">Al-Quran Cloud</a> (texte non modifié). Traduction française et récitations : Al-Quran Cloud, pour un usage gratuit et non commercial.${EA.length?` Audio de certains récitateurs : <a href="https://everyayah.com/" rel="noopener">everyayah.com</a>.`:''} ${MQL.length?` Récitations « sourate entière » : <a href="https://mp3quran.net" rel="noopener">mp3quran.net</a>.`:''} Polices : Amiri Quran et Noto Naskh Arabic (licence SIL OFL).</p>${MQ_OK&&!window.NOOR_NO_EA&&MQ_WANT.some(w=>!MQL.some(x=>x.id==='mq:'+w[0]))?`<p class="mute">Non trouvés dans la source : ${MQ_WANT.filter(w=>!MQL.some(x=>x.id==='mq:'+w[0])).map(w=>w[1]).join(', ')}.</p>`:''}<p class="mute">Application gratuite, sans publicité ni collecte de données. <a href="confidentialite.html">Politique de confidentialité</a></p></section>`;
+ basmala().then(b=>{const e=$('#pvw');if(e)e.textContent=b}).catch(()=>{});
+ getJ('ed:tr',`${API}/edition?language=fr&type=translation`).then(ed=>{const s=$('#trs');if(!s)return;
+  if(!ed.some(e=>e.identifier===cfg.tr)){cfg.tr=(ed.find(e=>/hamidullah/.test(e.identifier))||ed[0]).identifier;saveCfg()}
+  s.innerHTML=ed.map(e=>`<option value="${esc(e.identifier)}" ${e.identifier===cfg.tr?'selected':''}>${esc(e.name||e.englishName)}</option>`).join('');s.onchange=()=>{cfg.tr=s.value;saveCfg()}}).catch(()=>{});}
+app.addEventListener('change',e=>{const t=e.target;
+ if(t.name==='rm'){cfg.mode=t.value;saveCfg();NA?.setPauseAtEnd({enabled:cfg.mode==='stop'}).catch(()=>{});say('Réglage enregistré')}
+ if(t.id==='fnt'){cfg.font=t.value;clean();saveCfg();apply()}
+ if(t.id==='shtr'){cfg.showTr=t.checked;saveCfg()}
+ if(t.id==='spd'){cfg.speed=+t.value;clean();saveCfg();applySpeed();NA?.setSpeed({speed:cfg.speed}).catch(()=>{});say('Vitesse : '+cfg.speed+'×')}
+ if(t.id==='slp'){sleepMin=+t.value;sleepAt=sleepMin?Date.now()+sleepMin*60000:0;NA?.setSleep({minutes:sleepMin}).catch(()=>{});say(sleepMin?`Minuteur : ${sleepMin} min`:'Minuteur désactivé')}});
+app.addEventListener('input',e=>{if(e.target.id==='sz'){cfg.size=+e.target.value;clean();saveCfg();apply()}});
+app.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,v=+b.dataset.v;
+ if(a==='play')play(cur,v);if(a==='resume')resume();if(a==='playS')play(cur,1);if(a==='dl')dlAudio(cur);if(a==='chk')cross(cur);if(a==='all')dlAllText();
+ if(a==='fav'||a==='bm'){const on=toggle(a,cur,v);b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);say(on?'Ajouté':'Retiré')}
+ if(a==='rm'){toggle(b.dataset.k,+b.dataset.s,v);lists()}
+ if(a==='sz+'||a==='sz-'){cfg.size=Math.min(3.2,Math.max(1.2,cfg.size+(a==='sz+'?.2:-.2)));saveCfg();apply()}
+ if(a==='tr'){cfg.showTr=!cfg.showTr;saveCfg();reader(cur,v||1)}});
+function route(){nav++;const p=(location.hash.slice(1)||'/').split('/').filter(Boolean);
+ document.querySelectorAll('nav a').forEach(a=>a.removeAttribute('aria-current'));
+ $(p[0]==='search'?'#n-s':p[0]==='lists'?'#n-l':p[0]==='settings'?'#n-g':'#n-h').setAttribute('aria-current','page');
+ window.scrollTo(0,0);if(p[0]==='s')reader(+p[1],+p[2]||1);else if(p[0]==='search')search();else if(p[0]==='lists')lists();else if(p[0]==='settings')settings();else home();}
+addEventListener('hashchange',route);
+(async()=>{apply();
+ try{META=await getJ('meta',API+'/surah')}catch{}
+ let r=[];try{r=await getJ('ed:rec',`${API}/edition?format=audio&language=ar&type=versebyverse`)}catch{}
+ RL=r;if(r.length&&!r.some(e=>e.identifier===cfg.rec)&&!EA.some(([f])=>'ea:'+f===cfg.rec)&&!cfg.rec.startsWith('mq:'))cfg.rec=r[0].identifier;
+ fillRec();if(!window.NOOR_NO_EA)loadMQ().then(l=>{MQL=l;fillRec()}).catch(()=>{});
+ route();navigator.storage?.persist?.().catch(()=>{});if('serviceWorker'in navigator&&!window.Capacitor)navigator.serviceWorker.register('sw.js').catch(()=>{});})();
+</script></body></html>
